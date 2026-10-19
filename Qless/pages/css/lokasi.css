@@ -1,0 +1,294 @@
+/* CSS untuk halaman lokasi.html */
+/* Location */
+.map-embed {
+    width: 100%;
+    height: 500px;
+    display: block;
+    border: none;
+    border-radius: 12px;
+    pointer-events: auto;
+}
+
+.map-embed:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .map-embed {
+        height: 350px;
+    }
+}
+
+.location-container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+.location-hero {
+    padding: 55px 0 45px;
+    color: #fff;
+    background: linear-gradient(110deg, #10192d, #173654);
+}
+.location-label,
+.section-eyebrow {
+    color: #0284c7;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+.location-hero h1 {
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 12px 0;
+}
+.location-hero h1 span { color: #38bdf8; }
+.location-hero p {
+    max-width: 550px;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+.location-breadcrumb {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #cbd5e1;
+}
+.fa-chevron-right {
+    transform: translateY(5px);
+}
+.location-breadcrumb a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+.location-section {
+    padding: 45px 0 55px;
+    background: #f8fafc;
+}
+.location-heading { margin-bottom: 22px; }
+.location-heading h2 {
+    color: #101c34;
+    font-size: 28px;
+    font-weight: 800;
+    margin: 8px 0;
+}
+.location-heading p {
+    color: #64748b;
+    font-size: 13px;
+    margin: 0;
+}
+.location-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(260px, .9fr);
+    gap: 20px;
+    align-items: stretch;
+}
+.location-map-card,
+.location-info-card {
+    min-width: 0;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, .04);
+}
+.map-header {
+    min-height: 50px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+.map-header > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+}
+.map-header > div i,
+.map-footer i { color: #0284c7; }
+.map-status {
+    color: #16a34a;
+    font-size: 10px;
+    white-space: nowrap;
+}
+.map-status i { font-size: 7px; }
+/* Dipakai untuk peta di halaman Location */
+.location-map-card .map-embed {
+    display: block;
+    width: 100%;
+    height: 420px;
+    border: 0;
+    border-radius: 0;
+    pointer-events: auto;
+}
+.map-footer {
+    padding: 12px 16px;
+    border-top: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 11px;
+}
+.map-footer i { margin-right: 5px; }
+.location-info-card { padding: 23px; }
+.location-icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    color: #0284c7;
+    background: #e0f2fe;
+    font-size: 20px;
+}
+.location-info-card h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #0f172a;
+}
+.location-subtitle {
+    color: #64748b;
+    font-size: 12px;
+    margin: 3px 0 0;
+}
+.location-divider {
+    height: 1px;
+    background: #e2e8f0;
+    margin: 18px 0;
+}
+.location-detail {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 18px;
+}
+.detail-icon {
+    width: 20px;
+    padding-top: 2px;
+    color: #0284c7;
+    flex-shrink: 0;
+}
+.location-detail h4 {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0 0 5px;
+    color: #0f172a;
+}
+.location-detail p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #64748b;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+.location-detail .detail-highlight {
+    color: #16a34a;
+    font-weight: 700;
+}
+.direction-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    background: #0284c7;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background .2s;
+}
+.direction-btn:hover {
+    background: #0369a1;
+    color: white;
+}
+.location-note {
+    margin: 12px 0 0;
+    color: #64748b;
+    font-size: 10px;
+    line-height: 1.6;
+}
+.location-note i { color: #0284c7; }
+.location-features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+.location-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 17px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+.location-feature > i {
+    color: #0284c7;
+    font-size: 19px;
+    margin-top: 3px;
+}
+.location-feature h4 {
+    color: #0f172a;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0 0 5px;
+}
+.location-feature p {
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.6;
+    margin: 0;
+}
+.location-footer {
+    background: #090d16;
+    color: #fff;
+    padding: 25px 0;
+}
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.footer-inner h3 {
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0;
+}
+.footer-inner h3 i { color: #38bdf8; margin-right: 5px; }
+.footer-inner p {
+    color: #94a3b8;
+    font-size: 11px;
+    margin: 5px 0 0;
+}
+/* LOCATION: TABLET + MOBILE, DIGABUNG */
+@media (max-width: 900px) {
+    .location-grid { grid-template-columns: 1fr; }
+    .location-map-card .map-embed { height: 360px; }
+    .location-info-card { padding: 22px; }
+}
+@media (max-width: 600px) {
+    .location-container { width: calc(100% - 32px); }
+    .location-hero { padding: 35px 0; }
+    .location-hero h1 { font-size: 30px; }
+    .location-hero p { font-size: 13px; }
+    .location-section { padding: 30px 0 38px; }
+    .location-heading { margin-bottom: 17px; }
+    .location-heading h2 { font-size: 23px; }
+    .location-grid { gap: 14px; }
+    .location-map-card .map-embed { height: 280px; }
+    .map-header { padding: 11px 12px; }
+    .map-footer { padding: 10px 12px; font-size: 10px; }
+    .location-info-card { padding: 18px; }
+    .location-features { grid-template-columns: 1fr; gap: 10px; margin-top: 14px; }
+    .location-feature { padding: 14px; }
+    .footer-inner { align-items: flex-start; flex-direction: column; gap: 12px; }
+}
