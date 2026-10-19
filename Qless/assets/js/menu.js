@@ -32,7 +32,9 @@ if (menuToggle && navigationMenu) {
     });
 
     document.addEventListener("click", (event) => {
-        if (!navigationMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+        const clickPath = event.composedPath();
+
+        if (!clickPath.includes(navigationMenu) && !clickPath.includes(menuToggle)) {
             closeMenu();
         }
     });
@@ -43,3 +45,4 @@ if (menuToggle && navigationMenu) {
         }
     });
 }
+

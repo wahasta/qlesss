@@ -1,36 +1,36 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healing Hands Medical Center - World-Class Care</title>
     <!-- Hubungkan file CSS eksternal -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages/css/common.css">
+    <link rel="stylesheet" href="pages/css/index.css">
     <!-- FontAwesome untuk ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
 </head>
-<body>
+<body scroll>
 
     <!-- TOP HEADER / NAVBAR -->
     <header class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <img src="image/logo.webp" alt="Healing Hands Medical Center Logo height=50" style="height: 80px;">
+                <img src="assets/image/logo.webp" alt="Healing Hands Medical Center Logo height=50">
             </div>
             <div class="nav-menu" id="primary-navigation">
                 <nav class="nav-links">
-                    <a href="#dokter">Find a Doctor</a>
+                    <a href="#appointment">Find a Doctor</a>
                     <a href="#departments">Department</a>
-                    <a href="./lokasi.html">Location</a>
+                    <a href="pages/html/lokasi.html">Location</a>
                     <a href="#about">About Us</a>
                     <a href="#contact">Contact</a>
                 </nav>
                 <div class="nav-actions">
                     <button class="search-btn" type="button" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <button class="book-appointment-btn" onclick="openModal()">Booking</button>
+                    <button class="book-appointment-btn" type="button" data-modal-open aria-haspopup="dialog" aria-controls="appointmentModal">Booking</button>
                 </div>
             </div>
             <button class="menu-toggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="primary-navigation">
@@ -53,12 +53,12 @@
             </div>
 
             <!-- APPOINTMENT QUICK WIDGET -->
-            <div class="appointment-widget">
+            <div class="appointment-widget" id="appointment">
                 <div class="widget-tabs">
-                    <img src="./image/boking.webp" alt="Calendar" style="height: 40px; margin-right: 10px;">
+                    <img src="assets/image/boking.webp" alt="Calendar">
                     <button><i class="fa-solid fa-user-doctor"></i> Find a Doctor</button>
                 </div>
-                <form class="widget-form" onsubmit="handleFormSubmit(event)">
+                <form class="widget-form">
                     <div class="form-group">
                         <label>Department</label>
                         <select id="widgetDept">
@@ -87,8 +87,10 @@
                         <select id="widgetTime">
                             <option>Select Time</option>
                             <option>09:00 AM</option>
+                            <option>11:00 AM</option>
                             <option>01:00 PM</option>
-                            <option>04:00 PM</option>
+                            <option>03:00 PM</option>
+                            <option>05:00 PM</option>
                         </select>
                     </div>
                     <div class="form-actions">
@@ -227,7 +229,7 @@
     <section class="emergency-banner">
         <div class="emergency-content">
             <div class="emergency-text">
-                <img src="./image/ambulan.webp"style="height: 60px; margin-right: 15px;">
+                <img src="assets/image/ambulan.webp" alt="Ambulance">
                 <div>
                     <h3>Emergency Care 24/7</h3>
                     <p>For life-threatening emergencies, we are always here.</p>
@@ -290,11 +292,11 @@
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#">Find a Doctor</a></li>
-                    <li><a href="#">Departments</a></li>
+                    <li><a href="#appointment">Find a Doctor</a></li>
+                                 <li><a href="#departments">Departments</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Patients & Visitors</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -309,14 +311,14 @@
             </div>
             <div class="footer-col">
                 <h4>Our Locations</h4>
-                <p><strong>Main Medical Center</strong><br>123 Wellness Blvd, Downtown, Metropolis, USA 10001</p>
+                <p><strong>Main Medical Center</strong><br>Jl. Mansion Valley No.8 - 22, Genitri, Tirtomoyo, Kec. Pakis, Kabupaten Malang, Jawa Timur 65154</p>
                 <p><strong>City Care Clinic</strong><br>45 Health Street, Midtown, USA 10002</p>
                 <a href="#" class="view-all-loc">View All Locations <i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <div class="footer-col">
                 <h4>Newsletter</h4>
                 <p>Stay updated with news & health tips.</p>
-                <form onsubmit="handleNewsletter(event)">
+                <form>
                     <input type="email" placeholder="Your email address" required>
                     <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
                 </form>
@@ -329,34 +331,34 @@
 
     <!-- MODAL APPOINTMENT -->
     <div id="appointmentModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2>Book an Appointment</h2>
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="appointmentModalTitle">
+            <button class="close-btn" type="button" data-modal-close aria-label="Tutup dialog">&times;</button>
+            <h2 id="appointmentModalTitle">Book an Appointment</h2>
             <p>Silakan isi data diri Anda untuk membuat janji temu dengan dokter.</p>
-            <form onsubmit="handleModalSubmit(event)">
-                <div class="form-group" style="margin-bottom: 15px;">
+            <form>
+                <div class="form-group">
                     <label>Nama Lengkap</label>
-                    <input type="text" id="modalName" required placeholder="Masukkan nama Anda" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    <input type="text" id="modalName" required placeholder="Masukkan nama Anda">
                 </div>
-                <div class="form-group" style="margin-bottom: 15px;">
+                <div class="form-group">
                     <label>Nomor Telepon</label>
-                    <input type="tel" id="modalPhone" required placeholder="Contoh: 08123456789" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    <input type="tel" id="modalPhone" required placeholder="Contoh: 08123456789">
                 </div>
-                <div class="form-group" style="margin-bottom: 15px;">
+                <div class="form-group">
                     <label>Pilih Spesialisasi / Dokter</label>
-                    <select id="modalDept" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    <select id="modalDept">
                         <option>Cardiology - Dr. Rajeev Sharma</option>
                         <option>Neurology - Dr. Ananya Patel</option>
                         <option>Orthopedics - Dr. Vikram Mehta</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; background: #0284c7; color: white; border: none; border-radius: 5px; cursor: pointer;">Konfirmasi Janji Temu</button>
+                <button type="submit" class="btn-primary">Konfirmasi Janji Temu</button>
             </form>
         </div>
     </div>
 
     <!-- Hubungkan file JS eksternal -->
-    <script src="script.js"></script>
-    <script src="menu.js" defer></script>
+    <script src="assets/js/menu.js" defer></script>
+    <script src="assets/js/index.js" defer></script>
 </body>
 </html>
